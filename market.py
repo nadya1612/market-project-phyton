@@ -1,29 +1,84 @@
 
 #nama :Nadya
 
-    
-    
-print("=== Selamat datang di pasar buah ===")
 
-print("Daftar Buah")
+
 
 nama = ["apel","jeruk", "anggur"]
 stock = ["20","15", "10"]
 harga = ["10_000","15_000", "20_000"]      
 index = [0,1,2]
-print("List buah : ")
-while True: 
-    print(" 1. Menampilkan daftar buah")
-    if angka == "1":
-        print("daftar buah")
-        print(f"{'index':<10} {'nama':<} {'stock':<} {'harga':<}")
+total_harga = 0
 
-    print(" 2. Menambah  buah")
-    print(" 3. Menghapus  buah")
-    print(" 4. Membeli buah")  
-    print(" 5. Keluar")
-    break
-angka =input("Masukkan angka menu yang ingin dijalankan : ")
-if 
-print("Daftar Buah")
+
+while True: 
+    print("=== Selamat datang di pasar buah ===")
+
+    print("List Menu : ")
+    print(" 1. Menampilkan daftar buah")
+    print(" 2. Menambahkan buah")
+    print(" 3. Menghapus buah")
+    print(" 4. Mengubah data buah")
+    print(" 5. Exit Program")
+    angka = input("Masukkan angka menu yang ingin dijalankan : ")
+    print("Daftar Buah")
+    if angka == "1":
+    
+        print(f"{'Index':<10} {'|Nama' :<10} {'|Stock':<10} {'|Harga':<10}")
+        print("-"*40)
+        for i in range(len(nama)):
+            print(f"{i:<10} |{nama[i]:<10} |{stock[i]:<10} |{harga[i]:<10}")
+    elif angka == "2":
+        nama_buah = input("Masukkan nama buah : ")
+        stock_buah = input("Masukkan stock buah : ")
+        harga_buah = input("Masukkan harga buah : ")
+        nama.append(nama_buah)
+        stock.append(stock_buah)
+        harga.append(harga_buah)
+        print("daftar buah")
+        print(f"|{'Index':<10} {'|Nama' :<10} {'|Stock':<10} {'|Harga':<10}")
+        print("-"*40)
+        for i in range(len(nama)):
+            print(f"{i:<10} |{nama[i]:<10} |{stock[i]:<10} |{harga[i]:<10}")
+    elif angka == "3":
+       
+        print(f"{'Index':<10} {'|Nama' :<10} {'|Stock':<10} {'|Harga':<10}")
+        print("-"*40)
+        for i in range(len(nama)):
+            print(f"{i:<10} |{nama[i]:<10} |{stock[i]:<10} |{harga[i]:<10}")
+        del_index = int(input("Masukkan index buah yang ingin dihapus :"))
+        
+        nama.pop(del_index)
+        stock.pop(del_index)
+        harga.pop(del_index)
+    
+        print("Daftar Buah")
+        for i in range(len(nama)):
+            print(f"{i:<10} |{nama[i]:<10} |{stock[i]:<10} |{harga[i]:<10}")
+    elif angka == "4":
+        print(f"{'Indeks':<10} {'|Nama':<10} {'|Stock':<10} {'|Harga':<10}")
+        print("-"*40)
+        for i in range(len(nama)):
+            print(f"{i:<10} |{nama[i]:<10} |{stock[i]:<10} |{harga[i]:<10}")
+
+        beli_index =int(input("Masukkan index buah yang ingin di beli :"))
+        jumlah_beli = (input("Masukkan jumlah buah yang ingin di beli :"))
+        if jumlah_beli > stock[beli_index]:
+            print(f"Maaf stock tidak cukup, stock {nama[beli_index]} tinggal {stock[beli_index]}")
+        else:
+            print("Isi chart :")
+            print(f"{'|Nama' :<10} {'|Qty':<10} {'|Harga':<10}")
+            while True:
+                lanjut =input("Mau beli yang lain lagi? (ya/tidak)")
+                if  lanjut == "ya":
+                    beli_index =int(input("Masukkan index buah yang ingin di beli :") )  
+                    jumlah_beli = int(input("Masukkan jumlah buah yang ingin di beli :"))
+                    total_beli = jumlah_beli * int(harga[beli_index])
+                    total_harga += total_beli
+                    print("Isi chart :")
+                    print(f"{'|Nama' :<10} {'|Qty':<10} {'|Harga':<10}")
+                    print(f"(|{nama[beli_index]:<10} |{jumlah_beli[beli_index]:<10} |{harga [beli_index]}:<10)")
+
+    
+
 
