@@ -1,6 +1,5 @@
 
-
-#
+#nama :Nadya
 print("=== Fruits Market ===")
 #price
 apple_price = 10_000
